@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture Inspection</title>
+
+    <link rel="shortcut icon" type="x-icon" href="./images/photograph.png">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+        integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Material Icons CDN -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="./inspection.css">
+
+    <!-- Boxicon Css File -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+
+</head>
+
+<body>
+    <div class="containerInspection">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="./images/logoMain.png">
+                    <!-- <h2>CON<span class="danger">SOLE</span></h2> -->
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-symbols-sharp">close</span>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="dashboard.html">
+                    <span class="material-symbols-sharp">dashboard</span>
+                    <h3>Inspection Summary</h3>
+                </a>
+                <a href="barChart.html">
+                    <span class="material-symbols-sharp">bar_chart</span>
+                    <h3>Batch Summary</h3>
+                </a>
+                <a href="inspection.html" class="active">
+                    <span class="material-symbols-sharp">frame_inspect</span>
+                    <h3>Start Inspection</h3>
+                </a>
+                <a href="reports.html">
+                    <span class="material-symbols-sharp">lab_profile</span>
+                    <h3>View Reports</h3>
+                </a>
+                <a href="settings.html">
+                    <span class="material-symbols-sharp">settings</span>
+                    <h3>Controls</h3>
+                </a>
+                <a href="userguide.html">
+                    <span class="material-symbols-sharp">menu_book</span>
+                    <h3>User Guide</h3>
+                </a>
+                <a href="aboutus.html">
+                    <span class="material-symbols-sharp">help</span>
+                    <h3>About Us</h3>
+                </a>
+                <a href="index.html">
+                    <span class="material-symbols-sharp">logout</span>
+                    <h3>LOG<text class="danger">OUT</text></h3>
+                </a>
+            </div>
+        </aside>
+        <!--------------------- End Of Aside --------------------->
+        <div class="inspectionBody">
+            <div class="inspectionMain">
+                <div class="inspectionContainer">
+                    <div class="inspectionCameraWords">
+                        <h1>Insepction Camera</h1>
+                    </div>
+                    <div class="currentDateAndTime">
+                        <h3 id="displayDate"></h3>
+                        <h3 id="displayDateTime"></h3>
+                    </div>
+                    <div class="main_inspection">
+                        <div class="ccass">
+                            <div class="chooseCBS">
+
+                                <!-- Camera Selection -->
+
+                                <!-- <div class="chooseCamera">
+                                    <input type="text" class="textCamera" placeholder="Select Camera" readonly>
+                                    <div class="chooseCameraOption">
+
+                                        <div onclick="showCamera('Camera 1')">
+                                            <ion-icon name="camera-outline"></ion-icon>Camera 1
+                                        </div>
+
+                                        <div>
+                                            <ion-icon name="alert-circle-outline"></ion-icon>None
+                                        </div>
+
+                                    </div>
+                                </div> -->
+
+
+                                <div class="search_select_box">
+                                    <select class="w-100" id="videoSource">
+                                        <option selected disabled>Select Camera</option>
+                                    </select>
+                                </div>
+
+
+                                <!-- Bottle Type Selection -->
+                                <!-- <div class="chooseBottleType">
+                                    <input type="text" class="textBottle" placeholder="Select Bottle Type" readonly>
+                                    <div class="chooseBottleTypeOption">
+                                        <div onclick="showBottle('Pantene')">
+                                            <ion-icon name="beaker-outline"></ion-icon>Pantene
+                                        </div>
+                                        <div onclick="showBottle('Head n Shoulders')">
+                                            <ion-icon name="beaker-outline"></ion-icon>Head n Shoulders
+                                        </div>
+                                        <div>
+                                            <ion-icon name="alert-circle-outline"></ion-icon>None
+                                        </div>
+                                    </div>
+                                </div> -->
+
+                                <!-- Bottle Type Selection -->
+                                <div class="chooseSize">
+                                    <input type="text" class="textSize" placeholder="Select Size" readonly>
+                                    <div class="chooseSizeOption">
+                                        <div onclick="showSize('Medium')">
+                                            <ion-icon name="resize-outline"></ion-icon>Medium
+                                        </div>
+                                        <div onclick="showSize('Larger')">
+                                            <ion-icon name="expand-outline"></ion-icon>Larger
+                                        </div>
+                                        <div>
+                                            <ion-icon name="alert-circle-outline"></ion-icon>None
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inesrtBottleID">
+                                    <input type="text" class="inesrtBottleIDInput" placeholder="Insert Batch ID">
+                                </div>
+                            </div>
+
+                            <div class="cameraMainVideo">
+                                <div class="cameraVideo">
+                                    <video id="vid" autoplay></video>
+                                </div>
+                                <div class="allPicturesButtons">
+
+                                    <!-- <div class="inesrtBottleID">
+                                        <input type="text" class="inesrtBottleIDInput" placeholder="Insert Batch ID">
+                                    </div> -->
+
+                                    <div class="startCameraAndTakePicture">
+                                        <div class="startCamera">
+                                            <button class="startCameraBtn" onclick="start();">Start Camera</button>
+                                        </div>
+                                        <div class="takePicture">
+                                            <button class="takePictureBtn" onclick="stop();">Stop Camera</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- <button class="inspectBtn" onclick="upload()">Start Inspection</button> -->
+                                    <button class="start-inspection-btn">Start Inspection</button>
+
+                                    <!-- <div class="containerProgressBar">
+                                        <div class="progress-bar"><b>0%</b></div>
+                                    </div> -->
+                                    <!-- <div class="loader"></div> -->
+
+                                    <div class="restartAndStop">
+                                        <div class="restartBtnMain">
+                                            <button class="restartBtn"><i
+                                                    class="fa-solid fa-arrow-rotate-right"></i></button>
+                                            <div class="restartBtnText"><b>Restart</b></div>
+                                        </div>
+                                        <div class="stopBtnMain">
+                                            <button class="stopBtn"><i class="fa-regular fa-circle-stop"></i></button>
+                                            <div class="stopBtnText"><b>Stop</b></div>
+                                        </div>
+
+                                    </div>
+                                    <div class="timerDivMain">
+                                        <div class="timerDiv"><b>Timer</b></div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mainNedLogos">
+                    <div class="nedLogos">
+                        <img src="./images/nedlogo.png" alt="">
+                    </div>
+                </div>
+
+                <!-- <div class="popup" id="popup">
+                    <img src="./images/success.gif"> -->
+                    <!-- <h2>Acceptable</h2> -->
+                    <!-- <div class="cdsp">
+                        <div class="cdspContainer"> -->
+                            <!-- <div class="item">Defect</div>
+                            <div class="item">Result</div>
+                            <div class="item">Check</div> -->
+                            <!-- <div class="item">Cap Not Seated</div>
+                            <div class="item">Acceptable</div>
+                            <div class="item"><span style="color:rgb(0, 88, 0);">&#x2713;</span></div>
+                            <div class="item">Dent On Bottle</div>
+                            <div class="item">Acceptable</div>
+                            <div class="item"><span style="color:rgb(0, 88, 0);">&#x2713;</span></div>
+                            <div class="item">Scuff On Bottle</div>
+                            <div class="item">Acceptable</div>
+                            <div class="item"><span style="color:rgb(0, 88, 0);">&#x2713;</span></div>
+                            <div class="item">Product On Bottle</div>
+                            <div class="item">Acceptable</div>
+                            <div class="item"><span style="color:rgb(0, 88, 0);">&#x2713;</span></div>
+                        </div> -->
+
+
+                        <!-- <div class="cnsm">
+                            <h3>Cap not seated</h3>
+                            <h3>Acceptable</h3>
+                            <span style="color:rgb(0, 88, 0);">&#x2713;</span>
+                        </div>
+                        <div class="dobm">
+                            <h3>Dent on bottle</h3>
+                            <h3>Acceptable</h3>
+                            <span style="color:green;">&#x2713;</span>
+                        </div>
+                        <div class="sobm">
+                            <h3>Scuff on bottle</h3>
+                            <h3>Acceptable</h3>
+                            <span style="color:green;">&#x2713;</span>
+                        </div>
+                        <div class="pobm">
+                            <h3>Product on bottle</h3>
+                            <h3>Acceptable</h3>
+                            <span style="color:green;">&#x2713;</span>
+                        </div> -->
+                    <!-- </div>
+                    <button class="buttonPopup" onclick="closePopup()">Okay</button>
+                </div> -->
+            </div>
+        </div>
+
+        <!--------------------- End Of Inspection --------------------->
+
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <span class="material-symbols-sharp">menu</span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-symbols-sharp active">light_mode</span>
+                    <span class="material-symbols-sharp">dark_mode</span>
+                </div>
+            </div>
+        </div>
+        <!--------------------- END OF RIGHT TOP --------------------->
+
+        <script src="./index.js"></script>
+        <script src="./script.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <!--------------------- END OF SCRIPT SEPARATE FILES AND LINKS --------------------->
+
+        <script>
+            function showCamera(anythingCamera) {
+                document.querySelector('.textCamera').value = anythingCamera;
+            }
+            let chooseCamera = document.querySelector('.chooseCamera');
+            chooseCamera.onclick = function () {
+                chooseCamera.classList.toggle('active');
+            }
+        </script>
+        <!-- SCRIPT OF CAMERA SELECTION -->
+
+        <script>
+            function showBottle(anythingBottle) {
+                document.querySelector('.textBottle').value = anythingBottle;
+            }
+            let chooseBottleType = document.querySelector('.chooseBottleType');
+            chooseBottleType.onclick = function () {
+                chooseBottleType.classList.toggle('active');
+            }
+        </script>
+        <!-- SCRIPT OF BOTTLE TYPE SELECTION -->
+
+        <script>
+            function showSize(anythingSize) {
+                document.querySelector('.textSize').value = anythingSize;
+            }
+            let chooseSize = document.querySelector('.chooseSize');
+            chooseSize.onclick = function () {
+                chooseSize.classList.toggle('active');
+            }
+        </script>
+        <!-- SCRIPT OF SIZE SELECTION -->
+
+        <script>
+            const cameraButton = document.querySelector('.cameraMainVideo');
+            var vidElement = null;
+            function start() {
+                var camAvailable = navigator.mediaDevices && navigator.mediaDevices.getUserMedia;
+                if (camAvailable) {
+                    vidElement = document.getElementById("vid");
+                    navigator.mediaDevices.getUserMedia({ video: true }).then(function (stream) {
+                        vidElement.srcObject = stream;
+                        vidElement.play();
+                    });
+                }
+            }
+            function stop() {
+                vidElement.remove();
+            }
+
+        </script>
+        <!-- SCRIPT OF CAMERA -->
+
+        <script>
+            save_btn = document.querySelector(".start-inspection-btn");
+            save_btn.onclick = function () {
+                this.innerHTML = "<div class='loader'></div>";
+                setTimeout(() => {
+                    this.innerHTML = "Inspection Done";
+                    this.style = "background:#dce1eb; color:#333; pointer-events:none; box-shadow:none;";
+                }, 2000);
+            }
+        </script>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+        <script src="select.js"></script>
+        <!-- <script>
+
+            navigator.mediaDevices.enumerateDevices().then(function (devices) {
+                for (var i = 0; i < devices.length; i++) {
+                    var device = devices[i];
+                    if (device.kind === 'videoinput') {
+                        var option = document.createElement('option');
+                        option.value = device.deviceId;
+                        option.text = device.label || 'camera ' + (i + 1);
+                        document.querySelector('select#videoSource').appendChild(option);
+                    }
+                };
+            });
+            
+        </script> -->
+
+
+        <!-- SCRIPT OF Choose Camera -->
+
+
+
+        <script type="text/javascript">
+
+            // var i = 0;
+            // function move() {
+            //     if (i == 0) {
+            //         i = 1;
+            //         var elem = document.getElementById("progress-bar");
+            //         var width = 10;
+            //         var id = setInterval(frame, 10);
+            //         function frame() {
+            //             if (width >= 100) {
+            //                 clearInterval(id);
+            //                 i = 0;
+            //             } else {
+            //                 width++;
+            //                 elem.style.width = width + "%";
+            //                 elem.innerHTML = width + "%";
+            //             }
+            //         }
+            //     }
+            // }
+
+            const upload = () => {
+                const progressBar = document.querySelector('.progress-bar')
+                progressBar.setAttribute('id', 'play-animation')
+            }
+
+        </script>
+
+        <!-- <script>
+            let popup = document.getElementById('popup');
+            function openPopup() {
+                popup.classList.add("open-popup");
+            }
+            function closePopup() {
+                popup.classList.remove("open-popup");
+            }
+        </script> -->
+        <!-- SCRIPT OF ANIMATON -->
+        <!--------------------- END OF SCRIPTS USED DIRECTLY IN THIS PAGE --------------------->
+</body>
+
+</html>

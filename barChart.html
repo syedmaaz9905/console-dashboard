@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture Inspection</title>
+
+    <link rel="shortcut icon" type="x-icon" href="./images/photograph.png">
+
+    <!-- Material Icons CDN -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="./barChart.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="./images/logoMain.png">
+                    <!-- <h2>CON<span class="danger">SOLE</span></h2> -->
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-symbols-sharp">close</span>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="dashboard.html">
+                    <span class="material-symbols-sharp">dashboard</span>
+                    <h3>Inspection Summary</h3>
+                </a>
+                <a href="barChart.html" class="active">
+                    <span class="material-symbols-sharp">bar_chart</span>
+                    <h3>Batch Summary</h3>
+                </a>
+                <a href="inspection.html">
+                    <span class="material-symbols-sharp">frame_inspect</span>
+                    <h3>Start Inspection</h3>
+                </a>
+                <a href="reports.html">
+                    <span class="material-symbols-sharp">lab_profile</span>
+                    <h3>View Reports</h3>
+                </a>
+                <a href="settings.html">
+                    <span class="material-symbols-sharp">settings</span>
+                    <h3>Controls</h3>
+                </a>
+                <a href="userguide.html">
+                    <span class="material-symbols-sharp">menu_book</span>
+                    <h3>User Guide</h3>
+                </a>
+                <a href="aboutus.html">
+                    <span class="material-symbols-sharp">help</span>
+                    <h3>About Us</h3>
+                </a>
+                <a href="index.html">
+                    <span class="material-symbols-sharp">logout</span>
+                    <h3>LOG<text class="danger">OUT</text></h3>
+                </a>
+            </div>
+        </aside>
+        <!--------------------- End Of Aside --------------------->
+        <div class="chartMain">
+            <div class="chartCard">
+                <div class="chartBox">
+                    <canvas id="myChart"></canvas>
+                    <div class="headOfButton">
+                        <div class="secondButton">
+                            <!-- <button data-tab-target="#dobChanger active" class="dob">Dent On Bottle</button>
+                                <button data-tab-target="#sobChanger" class="sob">Scuff On Bottle</button>
+                                <button data-tab-target="#pobChanger" class="pob">Product On Bottle</button> -->
+
+
+                            <div class="scrub">
+                                <input type="text" class="textScrub" placeholder="Select Defect" readonly>
+                                <div class="scrubOption">
+                                    <div onclick="showDefect('Dent On Bottle')">Dent On Bottle</div>
+                                    <div onclick="showDefect('Scuff On Bottle')">Scuff On Bottle</div>
+                                    <div onclick="showDefect('Product On Bottle')">Product On Bottle</div>
+                                </div>
+                            </div>
+                            <!-- <div class="scrub">
+                                <input type="text" class="textScrub" placeholder="Select Defect" readonly>
+                                <div class="scrubOption">
+                                    <div onclick="showBottle('Dent On Bottle')">
+                                        <ion-icon name="beaker-outline"></ion-icon>Dent On Bottle
+                                        Dent On Bottle
+                                    </div>
+                                    <div onclick="showBottle('Scuff On Bottle')">
+                                        <ion-icon name="beaker-outline"></ion-icon>Scuff On Bottle
+                                        Scuff On Bottle
+                                    </div>
+                                    <div onclick="showBottle('Product On Bottle')">
+                                        <ion-icon name="beaker-outline"></ion-icon>Product On Bottle
+                                        Product On Bottle
+                                    </div>
+                                </div>
+                            </div> -->
+
+                            <div class="choosePeriodicals">
+                                <input type="text" class="textPeriodical" placeholder="Choose Periodical" readonly>
+                                <div class="choosePeriodicalsOption">
+                                    <div onclick="showSize('Daily')">
+                                        <ion-icon name="resize-outline"></ion-icon>Daily
+                                    </div>
+                                    <div onclick="showSize('Weekly')">
+                                        <ion-icon name="expand-outline"></ion-icon>Weekly
+                                    </div>
+                                    <div onclick="showSize('Monthly')">
+                                        <ion-icon name="expand-outline"></ion-icon>Monthly
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="selectDefectType">
+                                <input type="text" class="textDefectType" placeholder="Select Defect Type" readonly>
+                                <div class="selectDefectTypeOption">
+                                    <div onclick="showDefectType('Acceptable')">
+                                        <ion-icon name="resize-outline"></ion-icon>Acceptable
+                                    </div>
+                                    <div onclick="showDefectType('Unacceptable')">
+                                        <ion-icon name="expand-outline"></ion-icon>Unacceptable
+                                    </div>
+                                    <div onclick="showDefectType('Marginal')">
+                                        <ion-icon name="expand-outline"></ion-icon>Marginal
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="fourthButton">
+                            <div class="mainButton">
+                                <button class="dayButton" onclick="timeFrame(this)" value="day">Update</button>
+                                <!-- <button class="weekButton" onclick="timeFrame(this)" value="week">Week</button>
+                                <button class="monthButton" onclick="timeFrame(this)" value="month">Month</button> -->
+                            </div>
+                            <div class="thirdButton">
+                                <button class="viewButton"><span
+                                        class="material-symbols-sharp">visibility</span>ViewReport</button>
+                                <button class="reportButton"><span
+                                        class="material-symbols-sharp">summarize</span>Generate Report</button>
+                                <button class="emailButton"><span
+                                        class="material-symbols-sharp">mail</span>Email</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+
+            <script
+                src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+
+            <script>
+                const day = [
+                    { x: Date.parse('2023-02-16 00:00:00 GMT+0500'), y: 18 },
+                    { x: Date.parse('2023-02-17 00:00:00 GMT+0500'), y: 12 },
+                    { x: Date.parse('2023-02-18 00:00:00 GMT+0500'), y: 6 },
+                    { x: Date.parse('2023-02-19 00:00:00 GMT+0500'), y: 9 },
+                    { x: Date.parse('2023-02-20 00:00:00 GMT+0500'), y: 3 },
+                    { x: Date.parse('2023-02-21 00:00:00 GMT+0500'), y: 10 },
+                    { x: Date.parse('2023-02-22 00:00:00 GMT+0500'), y: 5 },
+                ];
+                const week = [
+                    { x: Date.parse('2023-02-19 00:00:00 GMT+0500'), y: 38 },
+                    { x: Date.parse('2023-02-26 00:00:00 GMT+0500'), y: 22 },
+                    { x: Date.parse('2023-03-05 00:00:00 GMT+0500'), y: 46 },
+                    { x: Date.parse('2023-03-12 00:00:00 GMT+0500'), y: 39 },
+                    { x: Date.parse('2023-03-19 00:00:00 GMT+0500'), y: 33 },
+                    { x: Date.parse('2023-03-26 00:00:00 GMT+0500'), y: 26 },
+                    { x: Date.parse('2023-04-02 00:00:00 GMT+0500'), y: 35 },
+                ];
+                const month = [
+                    { x: Date.parse('2023-03-01 00:00:00 GMT+0500'), y: 102 },
+                    { x: Date.parse('2023-04-01 00:00:00 GMT+0500'), y: 132 },
+                    { x: Date.parse('2023-05-01 00:00:00 GMT+0500'), y: 169 },
+                    { x: Date.parse('2023-06-01 00:00:00 GMT+0500'), y: 209 },
+                    { x: Date.parse('2023-07-01 00:00:00 GMT+0500'), y: 136 },
+                    { x: Date.parse('2023-08-01 00:00:00 GMT+0500'), y: 190 },
+                    { x: Date.parse('2023-09-01 00:00:00 GMT+0500'), y: 155 },
+                ];
+                // setup 
+                const data = {
+                    // labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        label: 'Default Daily',
+                        data: day,
+                        backgroundColor: [
+                            'rgba(255, 26, 104, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(0, 0, 0, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 26, 104, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(0, 0, 0, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                };
+
+                // config 
+                const config = {
+                    type: 'bar',
+                    data,
+                    options: {
+                        scales: {
+                            x: {
+                                type: 'time',
+                                time: {
+                                    unit: 'day'
+                                }
+                            },
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                };
+
+                // render init block
+                const myChart = new Chart(
+                    document.getElementById('myChart'),
+                    config
+                );
+
+                function timeFrame(period) {
+                    // console.log(period)
+                    console.log(period.value)
+                    if (period.value == 'day') {
+                        myChart.config.options.scales.x.time.unit = period.value;
+                        myChart.config.data.datasets[0].data = day;
+                    }
+                    if (period.value == 'week') {
+                        myChart.config.options.scales.x.time.unit = period.value;
+                        myChart.config.data.datasets[0].data = week;
+                    }
+                    if (period.value == 'month') {
+                        myChart.config.options.scales.x.time.unit = period.value;
+                        myChart.config.data.datasets[0].data = month;
+                    }
+                    myChart.update();
+                }
+
+            </script>
+        </div>
+        <!--------------------- END OF CHARTS DAILY, WEEKLY & MONTHLY --------------------->
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <span class="material-symbols-sharp">menu</span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-symbols-sharp active">light_mode</span>
+                    <span class="material-symbols-sharp">dark_mode</span>
+                </div>
+                <!-- <div class="profile">
+                        <div class="info">
+                            <p>Hey, <b>XYZ</b></p>
+                            <small class="text-muted">Admin</small>
+                        </div>
+                        <div class="profile-photo">
+                            <img src="./images/profile.png" />
+                        </div>
+                    </div> -->
+            </div>
+            <!--------------------- END OF RIGHT TOP --------------------->
+        </div>
+        <script src="./index.js"></script>
+        <!-- SCRIPT OF DEFECT SELECTION -->
+        <script>
+            function showDefect(anythingBottle) {
+                document.querySelector('.textScrub').value = anythingBottle;
+            }
+            let scrub = document.querySelector('.scrub');
+            scrub.onclick = function () {
+                scrub.classList.toggle('active');
+            }
+        </script>
+        <!-- SCRIPT OF DEFECT SELECTION -->
+        <!-- SCRIPT OF PERIODICAL SELECTION -->
+        <script>
+            function showSize(anythingSize) {
+                document.querySelector('.textPeriodical').value = anythingSize;
+            }
+            let choosePeriodicals = document.querySelector('.choosePeriodicals');
+            choosePeriodicals.onclick = function () {
+                choosePeriodicals.classList.toggle('active');
+            }
+        </script>
+        <!-- SCRIPT OF PERIODICAL SELECTION -->
+        <!-- SCRIPT OF DEFECT TYPE SELECTION -->
+        <script>
+            function showDefectType(anythingSize) {
+                document.querySelector('.textDefectType').value = anythingSize;
+            }
+            let selectDefectType = document.querySelector('.selectDefectType');
+            selectDefectType.onclick = function () {
+                selectDefectType.classList.toggle('active');
+            }
+        </script>
+        <!-- SCRIPT OF DEFECT TYPE SELECTION -->
+</body>
+
+</html>

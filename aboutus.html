@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture Inspection</title>
+
+    <link rel="shortcut icon" type="x-icon" href="./images/photograph.png">
+
+    <!-- Material Icons CDN -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+        integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="./aboutus.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="./images/logoMain.png">
+                    <!-- <h2>CON<span class="danger">SOLE</span></h2> -->
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-symbols-sharp">close</span>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="dashboard.html">
+                    <span class="material-symbols-sharp">dashboard</span>
+                    <h3>Inspection Summary</h3>
+                </a>
+                <a href="barChart.html">
+                    <span class="material-symbols-sharp">bar_chart</span>
+                    <h3>Batch Summary</h3>
+                </a>
+                <a href="inspection.html">
+                    <span class="material-symbols-sharp">frame_inspect</span>
+                    <h3>Start Inspection</h3>
+                </a>
+                <a href="reports.html">
+                    <span class="material-symbols-sharp">lab_profile</span>
+                    <h3>View Reports</h3>
+                </a>
+                <a href="settings.html">
+                    <span class="material-symbols-sharp">settings</span>
+                    <h3>Controls</h3>
+                </a>
+                <a href="userguide.html">
+                    <span class="material-symbols-sharp">menu_book</span>
+                    <h3>User Guide</h3>
+                </a>
+                <a href="aboutus.html" class="active">
+                    <span class="material-symbols-sharp">help</span>
+                    <h3>About Us</h3>
+                </a>
+                <a href="index.html">
+                    <span class="material-symbols-sharp">logout</span>
+                    <h3>LOG<text class="danger">OUT</text></h3>
+                </a>
+            </div>
+        </aside>
+        <!--------------------- End Of Aside --------------------->
+
+        <div class="bodyOfAboutUs">
+            <div class="aboutUsTable">
+                <div class="containerAboutUs">
+                    <div class="heading">
+                        <h2>Our Team</h2>
+                    </div>
+                    <div class="main-box inner flex">
+                        <div class="team-wrap">
+                            <div class="team-member text-center">
+                                <div class="team-img">
+                                    <img src="./images/one.jpg" alt="">
+                                    <div class="overlay" onclick="openPopupOne()">
+                                        <div class="team-details text-center">
+                                            <p onclick="openPopupOne()">Read More</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="team-title">Dr. Majida Kazmi</h6>
+                                <span style="font-size: 15px;">Principal Investigator</span>
+                                <div class="socials mt-20">
+                                    <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end team member -->
+                        <div class="team-wrap">
+                            <div class="team-member text-center">
+                                <div class="team-img">
+                                    <img src="./images/two.jpeg" alt="">
+                                    <div class="overlay" onclick="openPopupTwo()">
+                                        <div class="team-details text-center">
+                                            <p onclick="openPopupTwo()">Read More</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="team-title">Dr. Saad Ahmed Qazi</h6>
+                                <span style="font-size: 15px;">Co-Principal Investigator</span>
+                                <div class="socials mt-20">
+                                    <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end team member -->
+                        <div class="team-wrap">
+                            <div class="team-member text-center">
+                                <div class="team-img">
+                                    <img src="./images/three.jpg" alt="">
+                                    <div class="overlay" onclick="openPopupThree()">
+                                        <div class="team-details text-center">
+                                            <p onclick="openPopupThree()">Read More</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="team-title">Dr Hashim Raza</h6>
+                                <span style="font-size: 15px;">Co-Principal Investigator</span>
+                                <div class="socials mt-20">
+                                    <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="main-box inner flex">
+                        <div class="team-wrap">
+                            <div class="team-member text-center">
+                                <div class="team-img">
+                                    <img src="./images/five.jpeg" alt="">
+                                    <div class="overlay" onclick="openPopupFour()">
+                                        <div class="team-details text-center">
+                                            <p onclick="openPopupFour()">Read More</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="team-title">Engr. Basra Hafeez</h6>
+                                <span style="font-size: 15px;">Research Assistant</span>
+                                <div class="socials mt-20">
+                                    <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end team member -->
+                        <div class="team-wrap">
+                            <div class="team-member text-center">
+                                <div class="team-img">
+                                    <img src="./images/four.jpeg" alt="">
+                                    <div class="overlay" onclick="openPopupFive()">
+                                        <div class="team-details text-center">
+                                            <p onclick="openPopupFive()">Read More</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="team-title">Engr. Jamal Shahid</h6>
+                                <span style="font-size: 15px;">Research Assistant</span>
+                                <div class="socials mt-20">
+                                    <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end team member -->
+                    </div>
+
+                    <div class="heading">
+                        <h2>Collaborators</h2>
+                    </div>
+
+                    <div class="academicPartners">
+                        <h3>Academic Partners</h3>
+                        <div class="nednclLogo">
+                            <div class="nedLogo">
+                                <p>NED University</p>
+                                <img src="./images/logo1.jpeg" alt="">
+                            </div>
+                            <div class="nclLogo">
+                                <p>Neuro Computation Lab</p>
+                                <img src="./images/logo2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="academicPartners">
+                        <h3>Industrial Partner</h3>
+                        <div class="nednclLogo">
+                            <div class="nedLogo">
+                                <p>Procter & Gamble</p>
+                                <img src="./images/logo3.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="academicPartners">
+                        <h3>Commercial Partner</h3>
+                        <div class="nednclLogo">
+                            <div class="nedLogo">
+                                <p>FS Technology</p>
+                                <img src="./images/logo4.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="academicPartners">
+                        <h3>Funded By</h3>
+                        <div class="nednclLogo">
+                            <div class="nedLogo">
+                                <p>HEC</p>
+                                <img src="./images/logo5.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="popupone" id="popupone">
+                    <img src="./images/one.jpg">
+                    <div>
+                        <h2>Dr. Majida Kazmi</h2>
+                    </div>
+                    <div>
+                        <p style="color: rgb(56, 56, 56);">
+                            Dr Majida Kazimi received the B.E. and M.E. degrees electrical engineering from the NED
+                            University of Engineering and Technology, Karachi, Pakistan, in 2009, and the Ph.D. degree
+                            in electrical engineering from NUST University, Pakistan, in 2017. She is currently an
+                            Associate Professor with the Department of Computer and Information Systems Engineering, NED
+                            University of Engineering and Technology. Her research interests include digital systems
+                            design, system on a chip, digital image processing, and computer vision.
+                        </p>
+                    </div>
+                    <button class="buttonPopup" onclick="closePopupOne()">Close</button>
+                </div>
+
+                <div class="popuptwo" id="popuptwo">
+                    <img src="./images/two.jpeg">
+                    <div>
+                        <h2>Dr. Saad Ahmed Qazi</h2>
+                    </div>
+                    <div>
+                        <p style="color: rgb(56, 56, 56);">
+                            Saad Ahmed Qazi received his B.E. in Electrical Engineering in 2001 from NED University,
+                            Karachi. He completed his M.S. from Lancaster University, U.K. in Digital Signal Processing
+                            Applications in 2002. He did his Ph.D. from Brunel University, U.K. in 2006. Saad Ahmed Qazi
+                            is currently serving at NED University as Professor and Dean, Faculty of Electrical and
+                            Computer Engineering. He has several international publications and research projects. He is
+                            PI of Neurocomputation Lab under National Centre of Artificial Intelligence. He is also a
+                            Co-PI in National Incubation Center Karachi. His research interests include Digital Signal
+                            Processing, Joint Time Frequency Analysis, Intelligent Algorithms, Data Analytics and
+                            Decision Support System.
+                        </p>
+                    </div>
+                    <button class="buttonPopup" onclick="closePopupTwo()">Close</button>
+                </div>
+
+                <div class="popupthree" id="popupthree">
+                    <img src="./images/three.jpg">
+                    <div>
+                        <h2>Dr Hashim Raza</h2>
+                    </div>
+                    <div>
+                        <p style="color: rgb(56, 56, 56);">
+                            Dr. Hashim Raza Khan brings in years of experience in electronics design. He has worked on
+                            instrumentation and calibration systems at Agilent Technologies, Germany (now Keysight) as
+                            well as at Infineon Technologies, Germany on designing integrated circuits for mobile
+                            phones. For the last three years, he is also heading a successful commercial venture within
+                            a public sector organization offering repair, calibration, training and engineering services
+                            for local industry.
+                        </p>
+                    </div>
+                    <button class="buttonPopup" onclick="closePopupThree()">Close</button>
+                </div>
+
+                <div class="popupfour" id="popupfour">
+                    <img src="./images/five.jpeg">
+                    <div>
+                        <h2>Engr. Basra Hafeez</h2>
+                    </div>
+                    <div>
+                        <p style="color: rgb(56, 56, 56);">
+                            Engr. Basra Hafeez ur Rehman graduated from NED University of Engineering & Technology with
+                            a bachelor's degree in Electronic Engineering (2015) and master's degree in Computer systems
+                            Engineering specialization in Computer Architecture Design (2019). She has a great
+                            experience and knowledge of academic research and Hands-on experience on microcontrollers
+                            ,FPGAs and SoCs devices. Computer vision, image processing and deep learning are also her
+                            areas of interest.
+                        </p>
+                    </div>
+                    <button class="buttonPopup" onclick="closePopupFour()">Close</button>
+                </div>
+
+                <div class="popupfive" id="popupfive">
+                    <img src="./images/four.jpeg">
+                    <div>
+                        <h2>Engr. Jamal Shahid</h2>
+                    </div>
+                    <div>
+                        <p style="color: rgb(56, 56, 56);">
+                            Engr. Jamal shahid graduated with a bachelor's degree in Electrical Engineering from NED
+                            University of Engineering and Technology in 2021 and currently he's working in NCL lab. He
+                            has a great experience in dealing electrical machines and possess good hardware skills and
+                            knowledge.
+                        </p>
+                    </div>
+                    <button class="buttonPopup" onclick="closePopupFive()">Close</button>
+                </div>
+
+            </div>
+        </div>
+        <!--------------------- End Of Table --------------------->
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <span class="material-symbols-sharp">menu</span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-symbols-sharp active">light_mode</span>
+                    <span class="material-symbols-sharp">dark_mode</span>
+                </div>
+            </div>
+            <!--------------------- END OF RIGHT TOP --------------------->
+        </div>
+
+        <script src="./index.js"></script>
+
+        <script>
+            let popupone = document.getElementById('popupone');
+            function openPopupOne() {
+                popupone.classList.add("open-popup-one");
+            }
+            function closePopupOne() {
+                popupone.classList.remove("open-popup-one");
+            }
+        </script>
+
+        <script>
+            let popuptwo = document.getElementById('popuptwo');
+            function openPopupTwo() {
+                popuptwo.classList.add("open-popup-two");
+            }
+            function closePopupTwo() {
+                popuptwo.classList.remove("open-popup-two");
+            }
+        </script>
+
+        <script>
+            let popupthree = document.getElementById('popupthree');
+            function openPopupThree() {
+                popupthree.classList.add("open-popup-three");
+            }
+            function closePopupThree() {
+                popupthree.classList.remove("open-popup-three");
+            }
+        </script>
+
+        <script>
+            let popupfour = document.getElementById('popupfour');
+            function openPopupFour() {
+                popupfour.classList.add("open-popup-four");
+            }
+            function closePopupFour() {
+                popupfour.classList.remove("open-popup-four");
+            }
+        </script>
+
+        <script>
+            let popupfive = document.getElementById('popupfive');
+            function openPopupFive() {
+                popupfive.classList.add("open-popup-five");
+            }
+            function closePopupFive() {
+                popupfive.classList.remove("open-popup-five");
+            }
+        </script>
+</body>
+
+</html>
